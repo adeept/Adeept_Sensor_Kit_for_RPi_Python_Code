@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import RPi.GPIO as GPIO
 import ds18b20
 import segment
 import time
