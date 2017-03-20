@@ -8,10 +8,10 @@ def init():
 def loop():
 	while True:
 		res = ADC0832.getResult()
-		if res < 0:
+		'''if res < 0:
 			res = 0
 		if res > 100:
-			res = 100
+			res = 100'''
 		print 'res = %d' % res
 		time.sleep(0.2)
 
