@@ -3,18 +3,18 @@ import RPi.GPIO as GPIO
 import ADC0832
 import time
 
-FlamePin = 15
+FlamePin_S = 15
 
 def init():
 	GPIO.setmode(GPIO.BOARD)	
-	GPIO.setup(FlamePin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+	GPIO.setup(FlamePin_S, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+	GPIO.add_event_detect(FlamePin_S, GPIO.FALLING, callback=myISR)
 	ADC0832.setup()
 
 def myISR(ev=None):
 	print "Flame is detected !"
 
 def loop():
-	GPIO.add_event_detect(FlamePin, GPIO.FALLING, callback=myISR)
 	while True:
 		res = ADC0832.getResult()
 		print 'res = %d' %res
