@@ -52,7 +52,7 @@ def sendLED(LEDstate):
 		LEDstate = LEDstate >> 1
   
 def setup():
-	print "LED bar test code!"
+	print "Adeept LED bar test code!"
 	print "Using DATA = PIN16(GPIO23), CLK = PIN18(GPIO24)"   
 
 	GPIO.setwarnings(False)
@@ -79,7 +79,6 @@ def destroy():
 
 if __name__ == '__main__':
 	setup();
-	print "Test...setup OK"
 	try:
 		loop()
 	except KeyboardInterrupt:
