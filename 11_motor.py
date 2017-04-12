@@ -35,6 +35,8 @@ def loop():
 		time.sleep(5)
 		motor(1, 0)
 		time.sleep(5)
+		motor(0, 0) # stop
+		time.sleep(5)
 
 def destroy():
 	motorStop()
