@@ -7,11 +7,11 @@ LaserRecvPin = 11
 def setup():
 	GPIO.setwarnings(False)
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
-	GPIO.setup(LaserRecvPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set LaserRecvPin's mode as input, and pull up to high level(3.3V)
+	GPIO.setup(LaserRecvPin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)    # Set LaserRecvPin's mode as input, and pull up to high level(3.3V)
 
 def loop():
 	while True:
-		if GPIO.input(LaserRecvPin) == GPIO.LOW:
+		if GPIO.input(LaserRecvPin) == GPIO.HIGH:
 			print 'Laser received...'
 		else:
 			print '...Laser not received'
