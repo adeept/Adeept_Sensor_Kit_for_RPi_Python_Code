@@ -7,6 +7,7 @@ BtnPin = 12    # pin12 --- vibration switch
 Led_status = 1
 
 def setup():
+	GPIO.setwarnings(False)
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
 	GPIO.setup(LedPin, GPIO.OUT)   # Set LedPin's mode is output
 	GPIO.setup(BtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set BtnPin's mode is input, and pull up to high level(3.3V)
